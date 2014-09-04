@@ -1,0 +1,23 @@
+{
+	"name": "<%= appName %>",
+	"version": "<%= appVersion %>",
+	"description": "<%= appDescription %>",
+	"main": "./dist/module.js",
+	"keywords": [
+		"angularjs",
+		"ngmodule"
+	],
+	"license": "ISC",
+	"private": false,
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"vendor",
+		"test"
+	],
+	"repository": {
+		"type": "git",
+		"url": "<%= appRepository %>"
+	},
+	"dependencies": {}
+}

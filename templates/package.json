@@ -1,0 +1,35 @@
+{
+	"name": "<%= appName %>",
+	"version": "<%= appVersion %>",
+	"description": "<%= appDescription %>",
+	"keywords": [
+		"angularjs",
+		"ngmodule"
+	],
+	"license": "ISC",
+	"files": [
+		"./package.json",
+		"./dist/index.js"
+	],
+	"dependencies": {
+		"angular": "^1.2.*"
+	},
+	"repository": {
+		"type": "git",
+		"url": "<%= appRepository %>"
+	},
+	"devDependencies": {
+		"gulp": "^3.8.1",
+		"gulp-rename": "^1.2.0",
+		"gulp-wrapper": "^0.1.5",
+		"gulp-concat": "^2.3.5",
+		"gulp-uglify": "^1.0.1",
+		"gulp-bower-src": "^0.1.0",
+		"karma": "^0.12.23",
+		"multipipe": "^0.1.1",
+		"gulp-filter": "^1.0.1",
+		"gulp-wrap": "^0.3.0",
+		"karma-jasmine": "^0.1.5",
+		"karma-phantomjs-launcher": "^0.1.4"
+	}
+}
