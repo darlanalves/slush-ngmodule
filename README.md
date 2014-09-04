@@ -1,4 +1,8 @@
-# ngmodule [![Build Status](https://secure.travis-ci.org/darlanalves/slush-ngmodule.png?branch=master)](https://travis-ci.org/darlanalves/slush-ngmodule) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-ngmodule.png)](http://badges.enytc.com/for/npm/slush-ngmodule)
+# slush-ngmodule
+
+Base structure to reusable AngularJS components
+
+[![Build Status](https://secure.travis-ci.org/darlanalves/slush-ngmodule.png?branch=master)](https://travis-ci.org/darlanalves/slush-ngmodule) [![NPM version](https://badge-me.herokuapp.com/api/npm/slush-ngmodule.png)]
 
 > Base structure to reusable AngularJS components
 
