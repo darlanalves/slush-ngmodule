@@ -33,15 +33,12 @@ gulp.task('default', function(done) {
 			user = require('iniparser').parseSync(configFile).user;
 		}
 
-		var bower = {};
-		if (fs.existsSync('./bower.json')) {
-			bower = readJSON('./bower.json');
-		}
+		var bower = getBowerConfig();
 
 		var defaultValues = {
 			appName: bower.name || workingDirName,
 			appDescription: bower.description || '',
-			appVersion: bower.version || '0.1.0',
+			appVersion: bower.version || '0.0.0',
 			userName: format(user.name) || osUserName,
 			authorEmail: user.email || '',
 			mainFile: bower.main || '',
@@ -151,9 +148,29 @@ gulp.task('default', function(done) {
 			});
 	}
 
-	function createPackageFiles(answers, callback) {
-		var bower = readJSON('./bower.json'),
+	function getBowerConfig() {
+		var bower = {};
+
+		if (fs.existsSync('./bower.json')) {
+			bower = readJSON('./bower.json');
+		}
+
+		return bower;
+	}
+
+	function getNpmConfig() {
+		var npm = {};
+
+		if (fs.existsSync('./package.json')) {
 			npm = readJSON('./package.json');
+		}
+
+		return npm;
+	}
+
+	function createPackageFiles(answers, callback) {
+		var bower = getBowerConfig(),
+			npm = getNpmConfig();
 
 		if (answers.userName) {
 			bower.repository = npm.repository = {
