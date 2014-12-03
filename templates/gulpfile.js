@@ -48,7 +48,12 @@ gulp.task('build:bundle', buildBundleFile);
 gulp.task('minify', minifyModuleFiles);
 gulp.task('minify:bundle', minifyBundleFiles);
 gulp.task('watch', function() {
-	gulp.watch(['src/module.js', 'src/**/*.js', 'test/unit/**/*.spec.js'], ['build', 'test']);
+	gulp.watch(['src/module.js', 'src/**/*.js', 'test/unit/**/*.spec.js'], function() {
+		buildModuleFile(function() {
+			console.log(arguments);
+			runKarma();
+		});
+	});
 });
 
 function runKarma(done) {
@@ -58,24 +63,27 @@ function runKarma(done) {
 	}, function(exitCode) {
 		if (0 === exitCode) {
 			taskDone('test');
-			done();
+			done && done();
 		} else {
 			var error = new Error('Karma failed: ' + exitCode);
 			taskError('test', error);
-			done(error);
+			done && done(error);
 		}
 	});
 }
+
+function noop() {}
 
 function buildModuleFile(done) {
 	var pipe = multipipe(
 		gulp.src(sourceFiles),
 		concat('module.js'),
 		wrap(moduleWrapper),
-		gulp.dest('dist/')
+		gulp.dest('dist/'),
+		done || noop
 	);
 
-	return concatPipe(pipe, done);
+	// return concatPipe(pipe, done);
 }
 
 function buildBrowserifyFile(done) {
@@ -105,8 +113,10 @@ function buildBundleFile(done) {
 		taskError('bundle', err);
 		done(err);
 	});
+
 	pipe.on('end', function() {
 		taskDone('bundle');
+		done();
 	});
 
 	return pipe;
