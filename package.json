@@ -1,7 +1,7 @@
 {
   "name": "slush-ngmodule",
   "description": "Base structure to reusable AngularJS components",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "homepage": "https://github.com/darlanalves/slush-ngmodule",
   "author": {
     "name": "Darlan Alves",
