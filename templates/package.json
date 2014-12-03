@@ -30,6 +30,7 @@
 		"gulp-filter": "^1.0.1",
 		"gulp-wrap": "^0.3.0",
 		"karma-jasmine": "^0.1.5",
-		"karma-phantomjs-launcher": "^0.1.4"
+		"karma-phantomjs-launcher": "^0.1.4",
+		"main-bower-files": "*"
 	}
 }
