@@ -19,5 +19,8 @@
 		"type": "git",
 		"url": "<%= appRepository %>"
 	},
-	"dependencies": {}
+	"dependencies": {
+		"angular": "~1.3.5",
+		"angular-mocks": "~1.3.5"
+	}
 }

@@ -29,6 +29,10 @@ Run the generator from within the new folder:
 $ cd my-slush-ngmodule && slush ngmodule
 ```
 
+Now add your dependencies and start coding. For example, you will need `AngularJS` and `ngMock` modules to start your module. These should be added to `karma` config file as well (inside the `test` folder)
+
+Run `bower install` to get the necessary files.
+
 ## Getting To Know Slush
 
 Slush is a tool that uses Gulp for project scaffolding.

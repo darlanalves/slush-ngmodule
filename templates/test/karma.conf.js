@@ -28,10 +28,12 @@ module.exports = function(config) {
 
 		files: [
 			// load vendor files, like AngularJS
-			'vendor/vendor-name/vendor-index.js',
+			'vendor/angular/angular.js',
+			'vendor/angular-mocks/angular-mocks.js',
 
-			// load mockups for unit testing
-			'test/mock/module-mocks.js',
+
+			// load mockups for unit testing (optional)
+			// 'test/mock/module-mocks.js',
 
 			// this is the file built by gulp
 			'dist/module.js',

@@ -48,7 +48,7 @@ gulp.task('build:bundle', buildBundleFile);
 gulp.task('minify', minifyModuleFiles);
 gulp.task('minify:bundle', minifyBundleFiles);
 gulp.task('watch', function() {
-	gulp.watch(['src/module.js', 'src/**/*.js'], ['build']);
+	gulp.watch(['src/module.js', 'src/**/*.js', 'test/unit/**/*.spec.js'], ['build', 'test']);
 });
 
 function runKarma(done) {
